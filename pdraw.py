@@ -33,11 +33,15 @@ logging.config.dictConfig({
 logger = logging.getLogger(__name__)
 
 
-screen = turtle.getscreen()
-canvas = screen.getcanvas()
+screen = canvas = None
 
 
 def setup_turtle():
+    global screen
+    global canvas
+    screen = turtle.getscreen()
+    canvas = screen.getcanvas()
+
     turtle.color('black', 'yellow')
     turtle.speed('fastest')
     turtle.resizemode('user')
