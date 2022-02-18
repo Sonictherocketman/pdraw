@@ -17,7 +17,7 @@ $ git clone git@github.com:Sonictherocketman/pdraw.git
 Then simply run the script.
 
 ```
-$ python3 pdraw.py --help
+$ python3 pdraw.py -i a-file.txt [-e for arbitrary text]
 ```
 
 **IMPORTANT NOTICE:** I have not confirmed this, but it looks like versions of Python installed via Homebrew are not suitable for this script as they do not come with the necessary `tkinter` libraries bundled in. I had to install Python direct from [python.org](https://www.python.org/downloads/release/python-3100/)
