@@ -1,4 +1,4 @@
-# pdraw.py: Generate Deterministic, Procedurally Artwork from Arbitrary Text
+# pdraw.py: Generate Deterministic, Procedural Artwork from Arbitrary Text
 
 pdraw allows users to generate line art from arbitrary text. It has *no dependencies* other than the Python standard library, and works with Python 3.10+ (3.7+ should work but are untested).
 
