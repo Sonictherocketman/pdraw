@@ -130,7 +130,8 @@ def parse_args():
         type=str,
         help=(
             'Where to save the resultant image. If no value is provided, then no '
-            'image is saved once the process completes. It will still be displayed.'
+            'image is saved once the process completes. It will still be displayed. '
+            'pdraw generates .eps files which can be opened in PDF viewing apps.'
         ),
     )
     parser.add_argument(

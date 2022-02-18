@@ -41,6 +41,13 @@ pdraw is meant to be interactive, and so it renders its output fairly frequently
 pdraw can also draw with arbitrary draw distances and angles to suit your needs. The `-d/--distance` flag allows you to set a distance multiplier for each line, and the `-a/--angle` flag allows you to set the rotation angle between each line. The default is `90` which draws squares. Use `-a 60` for hexagons, `-a 120` for triangles, and `-a 160` for cool sharp ridges.
 
 
+### Saving Drawings
+
+pdraw can save drawings as `.eps` files (which can be opened in Preview.app for macOS as well as other PDF viewers). Those files can then be converted to PNG/JPG/etc. Simply supply the `-o/--output` flag with a path to the desired file.
+
+Optionally, you can close pdraw when your drawing is complete and saved by supplying the `-c/--close` flag.
+
+
 ## Example Usage
 
 Below are some quick recipes to get you started.
