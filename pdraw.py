@@ -226,32 +226,38 @@ def main(args):
 
     setup_turtle()
     l, r, t, b = 0, 0, 0, 0
-    for i, digit in enumerate(input):
+    try:
+        for i, digit in enumerate(input):
 
-        # Draw the line
-        distance = digit * args.distance
-        turtle.forward(distance)
-        turtle.left(args.angle)
+            # Draw the line
+            distance = digit * args.distance
+            turtle.forward(distance)
+            turtle.left(args.angle)
 
-        # Record the position
+            # Record the position
 
-        x, y = turtle.position()
-        l = min(x, l)
-        r = max(x, r)
-        t = max(y, t)
-        b = min(y, b)
+            x, y = turtle.position()
+            l = min(x, l)
+            r = max(x, r)
+            t = max(y, t)
+            b = min(y, b)
 
-        # Square the coordinates (it looks better w/ a 1:1 ratio)
+            # Square the coordinates (it looks better w/ a 1:1 ratio)
 
-        l = b = min(l, b)
-        r = t = max(r, t)
+            l = b = min(l, b)
+            r = t = max(r, t)
 
-        # Update UI
+            # Update UI
 
-        if i % args.refresh_rate == 0:
-            recenter_screen(l, r, t, b)
-            if args.verbose and args.number:
-                logger.info(f'Progress={100 * (i/args.number) // 1}%')
+            if i % args.refresh_rate == 0:
+                recenter_screen(l, r, t, b)
+                if args.verbose and args.number:
+                    logger.info(f'Progress={100 * (i/args.number) // 1}%')
+    except ValueError:
+        logger.warning(
+            'Could not convert text to useful integers. Did you mean to use --encode?'
+        )
+        return
 
     width, height = int(abs(l) + abs(r)), int(abs(t) + abs(b))
     recenter_screen(l, r, t, b)
